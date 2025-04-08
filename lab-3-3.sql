@@ -1,11 +1,11 @@
 -- In the modern era (1960-present), how many regular season games did the best team win each season?
 -- Challenge: Try to include the team's name in the results. Is it accurate?
-SELECT year, name, max(wins) FROM teams
+SELECT year, max(wins) FROM teams
 WHERE year >= 1960
 GROUP BY year
 ORDER BY wins DESC;
 
-SELECT COUNT (*) FROM(SELECT year, name, max(wins) FROM teams
+SELECT COUNT (*) FROM(SELECT year, max(wins) FROM teams
 WHERE year >= 1960
 GROUP BY year
 ORDER BY wins DESC);
